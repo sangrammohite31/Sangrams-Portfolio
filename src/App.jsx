@@ -6,14 +6,12 @@ import Nextpage from './components/Nextpage';
 
 function App() {
   return (
-    <div>
     <Router >
       <Routes>
         <Route path="/" element={<Main />} />
       <Route path='/next' element={<Nextpage/>}/>
       </Routes>
     </Router>
-    </div>
     
   );
 }
