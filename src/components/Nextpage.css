@@ -1,9 +1,14 @@
-#root {
-  width: 200vh !important;
+.power {
+  width: 100% !important;
     margin: 0 auto;
     padding: 2rem;
     text-align: center;
     height: 100vh !important;
-  
+   
+
+   
   }
-  
+  .power::-webkit-scrollbar {
+    display: none;
+  }
+

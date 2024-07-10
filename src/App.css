@@ -1,5 +1,5 @@
 #root {
-  width: 200vh !important;
+  width: 100% !important;
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;

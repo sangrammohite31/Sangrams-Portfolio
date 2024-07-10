@@ -30,7 +30,7 @@ export const Three = () => {
   return (
    <> 
    <PerspectiveCamera makeDefault position={[10, 1,-10 ]} rotateX={angleToRadians(50)}/>
-   <OrbitControls ref={orbitControlsRef} minPolarAngle={angleToRadians(50)} maxPolarAngle={angleToRadians(80) } maxZoom={200} />
+   <OrbitControls ref={orbitControlsRef} minPolarAngle={angleToRadians(50)} maxPolarAngle={angleToRadians(80) }enableZoom={false}/>
    <mesh rotation={[-(angleToRadians(90)), 0, 0]} receiveShadow>
                 <planeGeometry args={[60, 60]} />
                 <meshStandardMaterial color="#1ea3d8" />
