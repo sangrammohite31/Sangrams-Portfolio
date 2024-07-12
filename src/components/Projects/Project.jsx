@@ -5,13 +5,28 @@ import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Toolti
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 import { useState,useEffect } from 'react';
 import { label } from 'three/examples/jsm/nodes/Nodes.js';
-
+import './project.css'
 export const Project = () => {
 
     const [repos, setRepos] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [dataf,setdata]=useState([]);
+    const [proj,setproj]=useState([]);
+useEffect(()=>{
+  fetch('http://localhost:3000/project/get').then((res)=>{
+    if(!res.ok){
+        console.log("rfucked up ");
+    }
+    return res.json();
+}).then((data)=>{
+    console.log(data);
+    setproj(data);
+   
+})
+
+},[])
+ 
     useEffect(()=>{
         fetch('http://localhost:3000/api/get').then((res)=>{
             if(!res.ok){
@@ -100,14 +115,23 @@ export const Project = () => {
      <h1 className='text-white ml-12 '>Frontend Projects</h1>
      <h1 className='text-white ml-12 '>Links</h1> */}
      </div >
+{proj.map((i,index)=>{
+  return    <div key={index} href className="justify-center items-center flex flex-col text-white font-bold bg-[gray-900 ]rounded-md  border-red duration-500 hover:scale-105 hover:rounded-lg hover:text-black hover-gradient cursor-pointer  ">
+  <div className = "w-[80vh] h-[30px] rounded-lg   gap-10 ">
+    <center>
+  <a href={i['githublink']} target='/blank' className='text-white' >{i['name']}</a></center></div>
+  
+  
+  </div>
+})}
 
-   <div  className=" flex flex-col text-white font-bold bg-gray-900 rounded-md  border-red duration-500 hover:scale-105 hover:rounded-lg hover:text-black hover:bg-orange-50 cursor-pointer  ">
-<div className = "w-[80vh] h-[200px] rounded-lg   gap-10">
-<a href='https://nikeclone-sangrams-projects-00821dfe.vercel.app/' target='/blank'>Nike E-Commerce App(Frontend)</a></div>
+<button  href className="justify-center items-center flex flex-col text-white font-bold bg-[gray-900 ]rounded-md  border-red duration-500 hover:scale-105 hover:rounded-lg hover:text-black hover-gradient cursor-pointer  ">
+<div className = "w-[80vh] h-[30px] rounded-lg   gap-10 ">
+  <center>
+<a href='https://nikeclone-sangrams-projects-00821dfe.vercel.app/' target='/blank' >SribbleClone(Flutter)</a></center></div>
 
-<div className = "w-[80vh] h-[200px] rounded-lg gap-10 ">
-Apple Website (Clone)(Frontend)</div>
-</div>
+
+</button>
 
 </div>
       </div>

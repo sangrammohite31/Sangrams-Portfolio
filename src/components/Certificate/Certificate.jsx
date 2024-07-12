@@ -16,7 +16,10 @@ const [dataf,setdata]=useState([]);
     }
 ,[])
   return (
+    <div>
+      <div className='text-white text-center text-[40px] font-bold p-2'>Certifications</div>
     <div className="grid lg:grid-cols-3  gap-10 p-4">
+     
 {dataf.map((item,index)=>(
   
   <div  id='header-section' className=" text-white font-bold bg-gray-900 rounded-md  border-red duration-500 hover:scale-105 hover:rounded-lg hover:text-black hover:bg-orange-50 cursor-pointer  " key={item.id}>
@@ -26,7 +29,9 @@ const [dataf,setdata]=useState([]);
   
  
 </div>
+
 ))}
+</div>
     </div>
   )
 }
