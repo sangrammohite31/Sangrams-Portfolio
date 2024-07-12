@@ -23,7 +23,7 @@ export const Experience = () => {
     <>
       <OrbitControls  ref={orbitControlsRef} />
 <group position={[0,0,0]} rotateX={angleToRadians(60)}>
-      <Avatar animation={animation}/>
+      <Avatarr animation={animation}/>
       </group>
    <ambientLight intensity={2}></ambientLight>
     </>

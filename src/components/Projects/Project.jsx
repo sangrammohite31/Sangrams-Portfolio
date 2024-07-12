@@ -96,14 +96,19 @@ export const Project = () => {
       <Bar data={data}/>;
       <div className='flex flex-col'>
       <div className='flex flex-row'>
-     <h1 className='text-white'>Hosted</h1>
-     <h1 className='text-white ml-12 '>Projects</h1>
-     <h1 className='text-white ml-12 '>Links</h1>
+     {/* <h1 className='text-white'>Hosted</h1>
+     <h1 className='text-white ml-12 '>Frontend Projects</h1>
+     <h1 className='text-white ml-12 '>Links</h1> */}
      </div >
 
-   <div  className=" cursor-pointer text-white font-bold bg-gray-900 rounded-md  border-red duration-500 hover:scale-105 hover:rounded-lg hover:text-black hover:bg-orange-50 cursor-pointer  ">
-<h1>sanafj</h1>
-</div>
+   {/* <div  className=" flex flex-col text-white font-bold bg-gray-900 rounded-md  border-red duration-500 hover:scale-105 hover:rounded-lg hover:text-black hover:bg-orange-50 cursor-pointer  ">
+<div className = "w-[80vh] h-[200px] rounded-lg   gap-10">
+Nike E-Commerce App(Frontend)</div>
+
+<div className = "w-[80vh] h-[200px] rounded-lg gap-10 ">
+Apple Website (Clone)(Frontend)</div>
+</div> */}
+
 </div>
       </div>
       

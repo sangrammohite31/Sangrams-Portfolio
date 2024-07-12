@@ -81,11 +81,7 @@ const changeref = ()=>{
             <Three/>
         </Suspense>
     </Canvas>    
-    <Canvas>
-        <Suspense fallback={null}>
-            <Threee data={x} />
-        </Suspense>
-    </Canvas>
+  
     </div>
    
    

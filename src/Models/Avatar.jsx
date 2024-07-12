@@ -12,7 +12,7 @@ export function Avatar(props) {
  const group = useRef();
   const { nodes, materials } = useGLTF('./668e08c963703fb75313163f.glb')
   
-  const {animations:walkinganimation } = useFBX("animation/Typing.fbx")
+  const {animations:walkinganimation } = useFBX("animation/Standing Greeting.fbx")
   
 
   console.log(walkinganimation)

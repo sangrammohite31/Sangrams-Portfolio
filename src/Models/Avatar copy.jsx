@@ -15,7 +15,7 @@ export function Avatarr(props) {
  const group = useRef();
   const { nodes, materials } = useGLTF('./668e08c963703fb75313163f.glb')
   
-  const {animations:walkinganimation } = useFBX("animation/Walking (1).fbx")
+  const {animations:walkinganimation } = useFBX("animation/Standing Greeting.fbx")
   
 
   console.log(walkinganimation)
@@ -33,7 +33,7 @@ useEffect(()=>{
   return (
    
     <group {...props} ref={group}  dispose={null}>
-       <group position={[0,0,0]} >
+       <group position={[2.3,0,0]}  rotation={[-Math.PI/2,-Math.PI/35,-Math.PI/20]} scale={2.6}>
       <primitive object={nodes.Hips} />
       <skinnedMesh geometry={nodes.Wolf3D_Hair.geometry} material={materials.Wolf3D_Hair} skeleton={nodes.Wolf3D_Hair.skeleton} />
       <skinnedMesh geometry={nodes.Wolf3D_Glasses.geometry} material={materials.Wolf3D_Glasses} skeleton={nodes.Wolf3D_Glasses.skeleton} />
