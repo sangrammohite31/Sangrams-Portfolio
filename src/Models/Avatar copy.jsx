@@ -18,7 +18,7 @@ export function Avatarr(props) {
   const {animations:walkinganimation } = useFBX("animation/Standing Greeting.fbx")
   
 
-  console.log(walkinganimation)
+  
 
   walkinganimation[0].name ="Walking"
 

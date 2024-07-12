@@ -39,7 +39,7 @@ const Apppp = () => {
             <center>
             <Lottie className='w-[100px] ' animationData={animationdata} loop={true} />
             </center>
-<h1>Its Taking Longer than Isual </h1>
+<h1>Its Taking Longer than usual </h1>
         </div>
       ) : (
         <div><Nextpage/></div>

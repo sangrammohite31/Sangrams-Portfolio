@@ -12,7 +12,7 @@ import { Typewriter } from 'react-simple-typewriter';
 
 function Nextpage() {
   const handleButtonClick = () => {
-    document.getElementById('target-section').scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('header-section').scrollIntoView({ behavior: 'smooth' });
   };
   const nameRef = useRef(null);
  var x = [1,8, -4]
@@ -42,9 +42,9 @@ const changeref = ()=>{
 		<div className="text-gray-500 order-3 w-full md:w-auto md:order-2">
 			<ul className="flex font-semibold justify-between">
                
-				<li className="md:px-4 md:py-2 text-indigo-500"><button onClick={handleButtonClick}>Dashboard</button></li>
+				<li className="md:px-4 md:py-2 text-indigo-500"><button >Dashboard</button></li>
 				<li className="md:px-4 md:py-2 hover:text-indigo-400"><a href="#">Project</a></li>
-				<li className="md:px-4 md:py-2 hover:text-indigo-400"><a href="#">Certification</a></li>
+				<li className="md:px-4 md:py-2 hover:text-indigo-400"><button onClick={handleButtonClick}>Certification</button></li>
 				<li className="md:px-4 md:py-2 hover:text-indigo-400"><a href="#">About</a></li>
 				<li className="md:px-4 md:py-2 hover:text-indigo-400"><a href="#">Contact</a></li>
 			</ul>
@@ -58,10 +58,10 @@ const changeref = ()=>{
 		</div>
 	</div>
 </nav>
-      <h2 className="  text-white opacity-0 text-lg" ref={nameRef}>Sangram Mohite</h2>
+      {/* <h2 className="  text-white opacity-0 text-lg" ref={nameRef}>Sangram Mohite</h2>
       <h1 className='text-[20px] text-white'> I am </h1>
-         <h1 className='text-[100px] text-white font-bold'>
-        <Typewriter
+         <h1 className='text-[100px] text-white font-bold'> */}
+        {/* <Typewriter
           words={["Devops Engineer ","Cloud Engineer","Web Developer","Flutter Developer"]}
           loop={5} // Number of loops before stopping, set to 0 for infinite
           cursor
@@ -72,8 +72,8 @@ const changeref = ()=>{
 
 
 
-        />
-      </h1>
+        /> */}
+      {/* </h1> */}
 
 <div className='power w-full h-full bg-black'>
 <Canvas>

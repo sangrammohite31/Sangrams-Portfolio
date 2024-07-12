@@ -61,7 +61,7 @@ export const Project = () => {
         datasets: [
           {
             label: '',
-            data: [repos.length,dataf.length],
+            data: [repos.length,dataf.length,13],
             backgroundColor: 'rgba(75, 192, 192, 0.2)',
             borderColor: 'rgba(75, 192, 192, 1)',
             borderWidth: 1,
@@ -101,13 +101,13 @@ export const Project = () => {
      <h1 className='text-white ml-12 '>Links</h1> */}
      </div >
 
-   {/* <div  className=" flex flex-col text-white font-bold bg-gray-900 rounded-md  border-red duration-500 hover:scale-105 hover:rounded-lg hover:text-black hover:bg-orange-50 cursor-pointer  ">
+   <div  className=" flex flex-col text-white font-bold bg-gray-900 rounded-md  border-red duration-500 hover:scale-105 hover:rounded-lg hover:text-black hover:bg-orange-50 cursor-pointer  ">
 <div className = "w-[80vh] h-[200px] rounded-lg   gap-10">
-Nike E-Commerce App(Frontend)</div>
+<a href='https://nikeclone-sangrams-projects-00821dfe.vercel.app/' target='/blank'>Nike E-Commerce App(Frontend)</a></div>
 
 <div className = "w-[80vh] h-[200px] rounded-lg gap-10 ">
 Apple Website (Clone)(Frontend)</div>
-</div> */}
+</div>
 
 </div>
       </div>
