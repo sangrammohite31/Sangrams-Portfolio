@@ -14,7 +14,7 @@ export const Project = () => {
     const [dataf,setdata]=useState([]);
     const [proj,setproj]=useState([]);
 useEffect(()=>{
-  fetch('http://localhost:3000/project/get').then((res)=>{
+  fetch('https://portfolio-backend-icf6.onrender.com/project/get').then((res)=>{
     if(!res.ok){
         console.log("rfucked up ");
     }
@@ -28,13 +28,14 @@ useEffect(()=>{
 },[])
  
     useEffect(()=>{
-        fetch('http://localhost:3000/api/get').then((res)=>{
+        fetch('https://portfolio-backend-icf6.onrender.com/api/get').then((res)=>{
             if(!res.ok){
-                console.log("rfucked up ");
+                console.log("Something Went wrong ");
             }
             return res.json();
         }).then((data)=>{
             console.log(dataf);
+            console.log("fnsdkf")
             setdata(data);
            
         })

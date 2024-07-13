@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 export const Certificate = () => {
 const [dataf,setdata]=useState([]);
     useEffect(()=>{
-        fetch('http://localhost:3000/api/get').then((res)=>{
+        fetch('https://portfolio-backend-icf6.onrender.com/api/get').then((res)=>{
             if(!res.ok){
                 console.log("rfucked up ");
             }
@@ -17,7 +17,7 @@ const [dataf,setdata]=useState([]);
 ,[])
   return (
     <div>
-      <div className='text-white text-center text-[40px] font-bold p-2'>Certifications</div>
+      <div className='text-white text-center text-[40px] font-bold'>Certifications</div>
     <div className="grid lg:grid-cols-3  gap-10 p-4">
      
 {dataf.map((item,index)=>(

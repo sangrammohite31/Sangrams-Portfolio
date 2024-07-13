@@ -59,10 +59,9 @@ const changeref = ()=>{
 		</div>
 	</div>
 </nav>
-      {/* <h2 className="  text-white opacity-0 text-lg" ref={nameRef}>Sangram Mohite</h2>
-      <h1 className='text-[20px] text-white'> I am </h1>
-         <h1 className='text-[100px] text-white font-bold'> */}
-        {/* <Typewriter
+     
+         {/* <h1 className='text-[100px] text-white font-bold'>
+        <Typewriter
           words={["Devops Engineer ","Cloud Engineer","Web Developer","Flutter Developer"]}
           loop={5} // Number of loops before stopping, set to 0 for infinite
           cursor
@@ -85,6 +84,7 @@ const changeref = ()=>{
   
     </div>
    
+    <center><h2 className="  text-white opacity-0 text-[200px] font-bold" ref={nameRef}>I Am Sangram</h2></center>
     
     <Project/>
     <Skills/>
