@@ -36,7 +36,7 @@ export const Skills = () => {
         );
       }, []);
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' } } className=' justify-center'>
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' } } className='flex-1 overflow-hidden w-full h-full justify-center'>
       {languages.map((language, index) => (
         <div
           key={index}

@@ -4,6 +4,8 @@ import Main from './components/Main';
 import Nextpage from './components/Nextpage';
 import Appp from './components/demo/Appp';
 import Apppp from './Loader';
+import MatterComponent from './components/matter/MatterComponent';
+import MixedShapes from './components/matter/MatterComponent';
 
 
 function App() {
@@ -12,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Apppp />} />
         <Route path='/box' element={<Appp/>}/>
+        <Route path='/matterjs' element={<MixedShapes/>}/>
       
       </Routes>
     </Router>

@@ -10,6 +10,7 @@ import { Threee } from '../Models/indexx';
 import ParallaxComponent from './Certificate/Parallwx';
 import { Typewriter } from 'react-simple-typewriter';
 import { Skills } from './Skills/skills';
+import { Contact } from './Contact/contact';
 
 function Nextpage() {
   const handleButtonClick = () => {
@@ -89,6 +90,7 @@ const changeref = ()=>{
     <Project/>
     <Skills/>
     <Certificate/>
+    <Contact/>
    
 
 
