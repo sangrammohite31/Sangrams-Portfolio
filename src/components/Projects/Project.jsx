@@ -7,6 +7,7 @@ import { useState,useEffect } from 'react';
 import { label } from 'three/examples/jsm/nodes/Nodes.js';
 import './project.css'
 import ChainsAndBox from '../matter/MatterComponent';
+import MatterSVG from '../matter/MatterComponent';
 export const Project = () => {
 
     const [repos, setRepos] = useState([]);
@@ -118,7 +119,7 @@ useEffect(()=>{
      <h1 className='text-white ml-12 '>Links</h1> */}
      </div >
 
-<ChainsAndBox/>
+<MatterSVG/>
 
 
 {/* {proj.map((i,index)=>{

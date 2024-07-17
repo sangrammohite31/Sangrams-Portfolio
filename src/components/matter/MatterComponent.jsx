@@ -1,22 +1,28 @@
 import React, { useEffect, useRef } from 'react';
 import Matter from 'matter-js';
-import boxImage from '/FrontendAND Devops Engineer.png'; // Adjust the path to your image
-import ropeTexture from '/textureforrop.jpg'; // Adjust the path to your rope texture
 
-const ChainsAndBox = () => {
+// Import your images
+import image1 from '/S1.png';
+import image2 from '/A1.png';
+import image3 from '/N1.png';
+import image4 from '/G1.png';
+import image5 from '/R1.png';
+import image6 from '/A1.png';
+import image7 from '/M1.png';
+import image8 from '/name1.png';
+
+const MixedShapes = () => {
     const scene = useRef(null);
     const engine = useRef(Matter.Engine.create());
     const render = useRef(null);
 
     useEffect(() => {
-        const { Engine, Render, Runner, Composites, Constraint, MouseConstraint, Mouse, Composite, Bodies } = Matter;
-
-        const width = 700;
-        const height = 600;
-
-        // create engine
-        engine.current = Engine.create();
-        engine.current.gravity.y = 1; // Downward gravity
+        const { Engine, Render, Runner, Composite, MouseConstraint, Mouse, Bodies } = Matter;
+        // Configure gravity (default is { x: 0, y: 1 })
+        engine.current.gravity.x = 0.1;
+        engine.current.gravity.y = 0.3; 
+        const width = 600;
+        const height = 500;
 
         // create renderer
         render.current = Render.create({
@@ -26,9 +32,9 @@ const ChainsAndBox = () => {
                 width,
                 height,
                 showAngleIndicator: true,
-                wireframes: false, // Disable wireframes to see the images
-                background: '#000' //
-              }
+                wireframes: false,
+                background: 'black',
+            }
         });
 
         Render.run(render.current);
@@ -37,105 +43,45 @@ const ChainsAndBox = () => {
         const runner = Runner.create();
         Runner.run(runner, engine.current);
 
-        // create two chains
-        const group = Matter.Body.nextGroup(true);
+        // List of image paths
+        const images = [
+            image1, image2, image3, image4, image5,
+            image6, image7, image8
+        ];
 
-        const chainA = Composites.stack(100, 50, 5, 1, 10, 10, function(x, y) {
-            return Bodies.rectangle(x, y, 50, 20, {
-                collisionFilter: { group: group },
+        // add bodies with images
+        const stack = Composite.create();
+
+        images.forEach((image, index) => {
+            const body = Bodies.rectangle(100 + index * 50, 50, 50, 50, {
+                restitution: 0.8, // Add restitution for bounce effect
                 render: {
                     sprite: {
-                      
-                        texture: ropeTexture,
-                        xScale: 0.02,
-                        yScale: 0.01
+                        texture: image,
+                        xScale: 0.5, // Adjust scale as needed
+                        yScale: 0.5  // Adjust scale as needed
                     }
                 }
             });
+            Composite.add(stack, body);
         });
 
-        const chainB = Composites.stack(400, 50, 5, 1, 10, 10, function(x, y) {
-            return Bodies.rectangle(x, y, 50, 20, {
-                collisionFilter: { group: group },
-                render: {
-                    sprite: {
-                        texture: ropeTexture,
-                        xScale: 0.02,
-                        yScale: 0.01
-                    }
-                }
-            });
-        });
+        Composite.add(engine.current.world, stack);
 
-        Composites.chain(chainA, 0.5, 0, -0.5, 0, {
-            stiffness: 0.9,
-            length: 0,
-            render: { type: 'line' }
-        });
-
-        Composites.chain(chainB, 0.5, 0, -0.5, 0, {
-            stiffness: 0.9,
-            length: 0,
-            render: { type: 'line' }
-        });
-
-        // Attach the top of each chain to a static point to hang them
-        const chainAConstraint = Constraint.create({
-            pointA: { x: 400, y: 50 },
-            bodyB: chainA.bodies[0],
-            pointB: { x: -25, y: 0 },
-            stiffness: 0.9,
-            length: 10
-        });
-
-        const chainBConstraint = Constraint.create({
-            pointA: { x: 500, y: 50 },
-            bodyB: chainB.bodies[0],
-            pointB: { x: -25, y: 0 },
-            stiffness: 0.9,
-            length: 10
-        });
-
-        // Create the box with an image texture
-        const box = Bodies.rectangle(300, 300, 80, 80, {
-            render: {
-                sprite: {
-                    texture: boxImage,
-                    xScale: 0.2,
-                    yScale: 0.2
-                }
-            }
-        });
-
-        // Create constraints to connect the box to the last body of each chain at the top of the box
-        const connectorA = Constraint.create({
-            bodyA: chainA.bodies[chainA.bodies.length - 1],
-            pointA: { x: 25, y: 0 },
-            bodyB: box,
-            pointB: { x: 0, y: -40 },
-            stiffness: 0.9,
-            length: 10,
-            render: { type: 'line' }
-        });
-
-        const connectorB = Constraint.create({
-            bodyA: chainB.bodies[chainB.bodies.length - 1],
-            pointA: { x: 25, y: 0 },
-            bodyB: box,
-            pointB: { x: 0, y: -40 },
-            stiffness: 0.9,
-            length: 10,
-            render: { type: 'line' }
-        });
-
-        Composite.add(engine.current.world, [chainA, chainB, box, connectorA, connectorB, chainAConstraint, chainBConstraint]);
-
-        // add walls
         Composite.add(engine.current.world, [
-            Bodies.rectangle(400, 0, 800, 50, {isStatic: true,render:{fillStyle:"#000"} }),
-            Bodies.rectangle(400, 600, 800, 50,{isStatic: true,render:{fillStyle:"#000"} }),
-            Bodies.rectangle(800, 300, 50, 600,{isStatic: true,render:{fillStyle:"#000"} }),
-            Bodies.rectangle(0, 300, 50, 600,{isStatic: true,render:{fillStyle:"#000"} }),
+            // walls
+            Bodies.rectangle(400, 0, 800, 50, { isStatic: true , render: {
+                fillStyle: 'black',
+              },}),
+            Bodies.rectangle(400, 600, 800, 50, { isStatic: true , render: {
+                fillStyle: 'black',
+              },}),
+            Bodies.rectangle(800, 300, 50, 600, { isStatic: true, render: {
+                fillStyle: 'black',
+              }, }),
+            Bodies.rectangle(0, 300, 50, 600, { isStatic: true , render: {
+                fillStyle: 'black',
+              },})
         ]);
 
         // add mouse control
@@ -167,13 +113,10 @@ const ChainsAndBox = () => {
             Matter.Composite.clear(engine.current.world);
             Matter.Engine.clear(engine.current);
             render.current.canvas.remove();
-            render.current.canvas = null;
-            render.current.context = null;
-            render.current.textures = {};
         };
     }, []);
 
     return <div ref={scene} />;
-  };
+};
 
-  export default ChainsAndBox;
+export default MixedShapes;
