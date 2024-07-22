@@ -6,6 +6,7 @@ import Appp from './components/demo/Appp';
 import Apppp from './Loader';
 import MatterComponent from './components/matter/MatterComponent';
 import MixedShapes from './components/matter/MatterComponent';
+import { Tiltbox } from "./components/tilt"
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Apppp />} />
         <Route path='/box' element={<Appp/>}/>
         <Route path='/matterjs' element={<MixedShapes/>}/>
+        <Route path='/tilt' element={<Tiltbox/>}/>
       
       </Routes>
     </Router>

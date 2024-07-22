@@ -11,10 +11,14 @@ import ParallaxComponent from './Certificate/Parallwx';
 import { Typewriter } from 'react-simple-typewriter';
 import { Skills } from './Skills/skills';
 import { Contact } from './Contact/contact';
+import { Tiltbox } from './tilt';
 
 function Nextpage() {
   const handleButtonClick = () => {
     document.getElementById('header-section').scrollIntoView({ behavior: 'smooth' });
+  };
+  const handleButtonClickk = () => {
+    document.getElementById('projectsection').scrollIntoView({ behavior: 'smooth' });
   };
   const nameRef = useRef(null);
  var x = [1,8, -4]
@@ -45,7 +49,7 @@ const changeref = ()=>{
 			<ul className="flex font-semibold justify-between">
                
 				<li className="md:px-4 md:py-2 text-indigo-500"><button >Dashboard</button></li>
-				<li className="md:px-4 md:py-2 hover:text-indigo-400"><a href="#">Project</a></li>
+				<li className="md:px-4 md:py-2 hover:text-indigo-400"><button onClick={handleButtonClickk}>Project</button></li>
 				<li className="md:px-4 md:py-2 hover:text-indigo-400"><button onClick={handleButtonClick}>Certification</button></li>
 				<li className="md:px-4 md:py-2 hover:text-indigo-400"><a href="#">About</a></li>
 				<li className="md:px-4 md:py-2 hover:text-indigo-400"><a href="#">Contact</a></li>
@@ -90,6 +94,7 @@ const changeref = ()=>{
     <Project/>
     <Skills/>
     <Certificate/>
+    <Tiltbox/>
     <Contact/>
    
 

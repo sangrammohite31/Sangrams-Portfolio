@@ -18,7 +18,7 @@ export const Project = () => {
 useEffect(()=>{
   fetch('https://portfolio-backend-icf6.onrender.com/project/get').then((res)=>{
     if(!res.ok){
-        console.log("rfucked up ");
+        console.log("fucked up ");
     }
     return res.json();
 }).then((data)=>{

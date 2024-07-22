@@ -54,7 +54,7 @@ const MixedShapes = () => {
 
         images.forEach((image, index) => {
             const body = Bodies.rectangle(100 + index * 50, 50, 50, 50, {
-                restitution: 1.2, // Add restitution for bounce effect
+                restitution: 1.03, 
                 render: {
                     sprite: {
                         texture: image,
