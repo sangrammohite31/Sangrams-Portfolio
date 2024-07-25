@@ -19,7 +19,7 @@ const MixedShapes = () => {
     useEffect(() => {
         const { Engine, Render, Runner, Composite, MouseConstraint, Mouse, Bodies } = Matter;
         // Configure gravity (default is { x: 0, y: 1 })
-        engine.current.gravity.x = 0.1;
+        engine.current.gravity.x = 0.01;
         engine.current.gravity.y = 0.3; 
         const width = 600;
         const height = 500;
@@ -54,7 +54,7 @@ const MixedShapes = () => {
 
         images.forEach((image, index) => {
             const body = Bodies.rectangle(100 + index * 50, 50, 50, 50, {
-                restitution: 1.03, 
+                restitution: 1.04, 
                 render: {
                     sprite: {
                         texture: image,
